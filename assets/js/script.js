@@ -1,4 +1,6 @@
 // To-write: Java-script to make it work
+
+//Creating HTML elements
 var bodyEl = document.body;
 var timerEl = document.createElement("h1");
 var questionEl = document.createElement("h2");
@@ -14,10 +16,12 @@ var buttonEle2 = document.createElement("button");
 var buttonEle3 = document.createElement("button");
 var buttonEle4 = document.createElement("button");
 
+//adding classes
 timerEl.classList.add("timer");
 questionEl.classList.add("question");
 answersList.classList.add("answers");
 
+//Appending HTML Elements to the page
 bodyEl.appendChild(timerEl);
 bodyEl.appendChild(questionEl);
 bodyEl.appendChild(divEl);
@@ -31,8 +35,8 @@ answersEle3.appendChild(buttonEle3);
 answersList.appendChild(answersEle4);
 answersEle4.appendChild(buttonEle4);
 
+//Defining Arrays to select printed text
 var quizQuestion = ["Choose the selector which targets the last item of an array with a length of 5?", "The DOM refers to what?", 'Which of these adds an HTML element to the page?', "A Boolean value is a declaration of what?", "Your score is..."];
-
 var answerA = ["0", "The Body Element", "body.appendChild('h1')", "A Number"]
 var answerB = ["5", "The HTML of the page.", "body.textContent"];
 var answerC = ["4", "The CSS of the page.", "document.querySelector"];
@@ -43,7 +47,7 @@ var timeLeft = 120;
 var i = 0;
 console.log("this is " + i);
 
-
+//adding a timer
 function quizTimer() {
     var countDown = setInterval(function() {
     timeLeft--;
@@ -57,6 +61,7 @@ function quizTimer() {
     }, 1000);
 }
 
+//adding functions to print text to the screen
 function generateQuestion() {
 
     questionEl.textContent = quizQuestion[i];
@@ -87,6 +92,7 @@ generateQuestion();
 
 generateAnswers();
 
+//Create event listeners on the buttons to change the called array value to the text
 buttonEle1.addEventListener("click", function() {
     i++
     console.log(i);
